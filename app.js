@@ -7,7 +7,7 @@ const publicPath = path.join(__dirname, 'public');
 
 const hints = fs.readdirSync(publicPath)
   .filter((file) => path.basename(file) !== 'index.html')
-  .map((file) => (`/${path.basename(file)}`)).slice(0, 100);
+  .map((file) => (`/${path.basename(file)}`)).slice(0, 1);
 
 app.use(earlyHints(hints));
 app.use((req, res, next) => {
